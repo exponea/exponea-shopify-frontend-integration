@@ -1,0 +1,23 @@
+<!-- EXPONEA start -->
+{% if checkout.customer %}
+<script>
+    exponea.identify({
+        {% if checkout.customer.id %}"shopify_id": {{ checkout.customer.id | json }},{% endif %}
+        {% if checkout.customer.email %}"email_id": {{ checkout.customer.email | json }}{% endif %}
+    });
+    exponea.update({
+        {% if checkout.customer.email %}"email": {{ checkout.customer.email | json }},{% endif %}
+    });
+    if (Shopify && Shopify.Checkout && Shopify.Checkout.step) {
+        exponea.track('checkout', {
+            step_title: Shopify.Checkout.step,
+            shipping_city: {{ checkout.shipping_address.city | json }},
+            shipping_cost: {{ checkout.shipping_method.price | json }},
+            shipping_country: {{ checkout.shipping_address.country | json }},
+            shipping_type: {{ checkout.shipping_method.title | json }},
+            total_price: {{ checkout.total_price }}
+        });
+    }
+</script>
+{% endif %}
+<!-- EXPONEA end -->

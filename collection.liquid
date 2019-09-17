@@ -1,0 +1,10 @@
+<!-- EXPONEA start -->
+{% if collection %}
+<script type="text/javascript">
+    exponea.track('view_category',{
+        category_name: {{ collection.title | json }},
+        category_id: {{ collection.id | json }}
+    });
+</script>
+{% endif %}
+<!-- EXPONEA end -->

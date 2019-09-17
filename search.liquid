@@ -1,0 +1,9 @@
+<!-- EXPONEA start -->
+{% if search %}
+<script type="text/javascript">
+    exponea.track('search', {
+        _search_terms: {{ search.terms | json }}
+    });
+</script>
+{% endif %}
+<!-- EXPONEA end -->
