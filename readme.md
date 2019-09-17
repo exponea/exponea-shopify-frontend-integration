@@ -1,6 +1,6 @@
 # Shopify Front-end integration for Exponea
 
-This repository contains .liquid snippets that can enable standardized front-end tracking of e-commerce events on your Shopify website.
+This repository contains .liquid snippets that can enable standardized front-end tracking of e-commerce events on your Shopify Plus website.
 ## Installation
 
 You need to copy each .liquid snippet to the respective .liquid file in your Shopify theme.
