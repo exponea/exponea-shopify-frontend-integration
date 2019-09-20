@@ -7,7 +7,7 @@
         price: {{ product.price | money_without_currency | json }},
         _vendor: {{ product.vendor | json }},
         _collection_title: {{ collection.title | json }},
-        variant_id: {{ product.selected_variant.id | json }},
+        variant_id: {{ product.selected_or_first_available_variant.id | json }},
         {% if product.tags %}tags: {{ product.tags | json }},{% endif %}
         _available: {{ product.available|json }}
     });
