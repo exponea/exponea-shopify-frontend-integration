@@ -3,6 +3,7 @@
 <script type="text/javascript">
     exponea.initialize({
         "token": "<<PROJECT_TOKEN>>",
+      	"target": "<<PROJECT_API_ENDPOINT>>",
         {% if customer %}
         "customer": {
             {% if customer.email %}email_id: {{ customer.email | json }},{% endif %}
