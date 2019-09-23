@@ -9,9 +9,9 @@
             {% if customer.email %}email_id: {{ customer.email | json }},{% endif %}
             {%- assign cartJson = cart | json -%}
             {%- assign cartToken = cartJson | split:'token":"' | last | split:'"' | first -%}
-            shopify_id: {{ customer.id|json }},
+            shopify_id: {{ customer.id|json }}
             {% endif %}
-            {% if cartToken %}cart_id: {{ cartToken|json }}{% endif %}
+            {% if cartToken %},cart_id: {{ cartToken|json }}{% endif %}
         },
         "track": {
             "visits": true,
