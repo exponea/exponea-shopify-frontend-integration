@@ -3,14 +3,16 @@
 <script type="text/javascript">
     exponea.initialize({
         "token": "<<PROJECT_TOKEN>>",
-        {% if customer %}
+        "target": "<< TARGET_ENDPOINT >>",
         "customer": {
+            {% if customer %},
             {% if customer.email %}email_id: {{ customer.email | json }},{% endif %}
             {%- assign cartJson = cart | json -%}
             {%- assign cartToken = cartJson | split:'token":"' | last | split:'"' | first -%}
-            {% if cartToken %}cart_id: {{ cartToken }},{% endif %}
-            shopify_id: {{ customer.id|json }}
-        },{% endif %}
+            shopify_id: {{ customer.id|json }},
+            {% endif %}
+            {% if cartToken %}cart_id: {{ cartToken|json }}{% endif %}
+        },
         "track": {
             "visits": true,
             {% if shop %}"default_properties": { "domain": {{ shop.permanent_domain|json }} } {% endif %}
