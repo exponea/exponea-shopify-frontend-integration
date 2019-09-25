@@ -3,9 +3,9 @@
 <script type="text/javascript">
     exponea.initialize({
         "token": "<<PROJECT_TOKEN>>",
-        "target": "<< TARGET_ENDPOINT >>",
+        "target": "<< PROJECT_ENDPOINT >>",
         "customer": {
-            {% if customer %},
+            {% if customer %}
             {% if customer.email %}email_id: {{ customer.email | json }},{% endif %}
             shopify_id: {{ customer.id|json }}
             {% endif %}
