@@ -7,7 +7,7 @@ You need to copy each .liquid snippet to the respective .liquid file in your Sho
 
 1. Go to your Shopify admin panel > Online Store > Themes > Actions > Edit Code
 2. Find the respective files: `product.liquid`, `collection.liquid`, `checkout.liquid` and `search.liquid` and copy and paste the contents of each of the respective snippets from this repository to the top of the file. Make sure to maintain the valid syntax of HTML (e.g. paste the files inside the contents of `<head>` rather than outside.
-3.  Copy and paste the contents of the `theme.liquid` snippet from this repository to the `theme.liquid` file in Shopify. Replace the initialization configuration of the file with the configuration that you have received in the email with set-up instructions (e.g. replace the `<<PROJECT TOKEN>>` with a valid project token.
+3.  Copy and paste the contents of the `theme.liquid` snippet from this repository to the `theme.liquid` file in Shopify. Replace the initialization configuration of the file with the configuration that you have received in the email with set-up instructions (e.g. replace the configuration object with `<<PROJECT TOKEN>>` and `<<PROJECT API_ENDPOINT>>` with provided data).
 4. Save the theme and Exponea will initialize automatically.
 
 ## Usage
