@@ -3,7 +3,7 @@
 <script type="text/javascript">
     exponea.initialize({
         "token": "<<PROJECT_TOKEN>>",
-        "target": "<< PROJECT_ENDPOINT >>",
+        "target": "<<PROJECT_API_ENDPOINT>>",
         "customer": {
             {%- assign cartJson = cart | json -%}
             {%- assign cartToken = cartJson | split:'token":"' | last | split:'"' | first -%}
