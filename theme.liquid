@@ -5,13 +5,15 @@
         "token": "<<PROJECT_TOKEN>>",
         "target": "<<PROJECT_API_ENDPOINT>>",
         "customer": {
+          {% if cart.item_count != 0 %}
             {%- assign cartJson = cart | json -%}
             {%- assign cartToken = cartJson | split:'token":"' | last | split:'"' | first -%}
             {% if cartToken %}cart_id: {{ cartToken|json }}{% if customer %},{% endif %}{% endif %}
-            {% if customer %}
+          {% endif %}
+          {% if customer %}
             {% if customer.email %}email_id: {{ customer.email | json }},{% endif %}
             shopify_id: {{ customer.id|json }}
-            {% endif %}
+          {% endif %}
         },
         "track": {
             "visits": true,
