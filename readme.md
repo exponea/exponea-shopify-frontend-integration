@@ -23,8 +23,6 @@ The following events are tracked:
 - `search`
 - `checkout`
 
-You can find the description of the events and their attributes in the [official Exponea Shopify Tracking document]().
-
 ## Other notes
 
 These snippets have been developed, tested and validated for Shopify stores with no plugins. If your store is using any plugins, valid functionality is not guaranteed (e.g. if you are using a custom 3rd party checkout page, the `checkout` event tracking will not work).
