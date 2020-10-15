@@ -7,9 +7,15 @@ You need to copy each .liquid snippet to the respective .liquid file in your Sho
 
 1. Go to your Shopify admin panel > Online Store > Themes > Actions > Edit Code
 2. Find the respective files: `product.liquid`, `collection.liquid`, and `search.liquid` and copy and paste the contents of each of the respective snippets from this repository to the top of the file. Make sure to maintain the valid syntax of HTML (e.g. paste the files inside the contents of `<head>` rather than outside.
-3.  Copy and paste the contents of the `theme.liquid` snippet from this repository to the end of the `<head>` tag of the `theme.liquid` file in Shopify. Replace the initialization configuration of the file with the configuration that you have received in the email with set-up instructions (i.e. replace the configuration object with `<<PROJECT TOKEN>>`, `<<CART_COOKIE_NAME>>` and `<<PROJECT API_ENDPOINT>>` with provided data). Note that the `<<PROJECT API_ENDPOINT>>` also needs to be changed on line 2 - SDK loading script.
-4.  Copy and paste the contents of the `checkout.liquid` snippet from this repository to the end of the `<head>` tag of the `checkout.liquid` file in Shopify. Replace the initialization configuration of the file with the configuration that you have received in the email with set-up instructions (i.e. replace the configuration object with `<<PROJECT TOKEN>>` and `<<PROJECT API_ENDPOINT>>` with provided data). Note that the `<<PROJECT API_ENDPOINT>>` also needs to be changed on line 2 - SDK loading script.
+3. Copy and paste the contents of the `theme.liquid snippet` from this repository to the end of the `<head>` tag of the theme.liquid file in Shopify. Replace the initialization configuration of the file (i.e. replace the configuration object `<<PROJECT TOKEN>>`, `<<CART_COOKIE_NAME>>` and `<<PROJECT API_ENDPOINT>>` with values for your website - see below for more information). Note that the `<<PROJECT API_ENDPOINT>>` also needs to be changed on line 2 - SDK loading script.
+4. Copy and paste the contents of the `checkout.liquid` snippet from this repository to the end of the `<head>` tag of the `checkout.liquid` file in Shopify. Replace the initialization configuration of the file with the configuration that you have received in the email with set-up instructions (i.e. replace the configuration object `<<PROJECT TOKEN>>`, `<<CART_COOKIE_NAME>>` and `<<PROJECT API_ENDPOINT>>` with values for your website - see below for more information). Note that the `<<PROJECT API_ENDPOINT>>` also needs to be changed on line 2 - SDK loading script.
 5. Save the theme and Exponea will initialize automatically.
+
+Note on placeholder fields:
+`<<CART_COOKIE_NAME>>` - this is the name of the cart cookie from Shopify, most commonly called "cart".
+`<<PROJECT API_ENDPOINT>>` - this can be found in your Exponea project settings, most commonly "https://api.exponea.com"
+`<<PROJECT TOKEN>>` - this can be found in your Exponea project settings
+If you're unsure about any of the values above, please ask your Consultant / CSM for advice.
 
 ## Usage
 
