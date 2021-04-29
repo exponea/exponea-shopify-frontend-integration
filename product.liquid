@@ -5,6 +5,7 @@
         product_id: {{ product.id | json }},
         title: {{ product.title | json }},
         price: {{ product.price | money_without_currency | json }},
+        brand: {{ product.vendor | json }},
         _vendor: {{ product.vendor | json }},
         _collection_title: {{ collection.title | json }},
         variant_id: {{ product.selected_or_first_available_variant.id | json }},
