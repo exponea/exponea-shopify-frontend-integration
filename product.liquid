@@ -1,15 +1,22 @@
 <!-- EXPONEA start -->
 {% if product %}
 <script type="text/javascript">
+    {% assign stock_level = 0 %}
+    {% for variant in product.variants %}
+    {% assign stock_level = stock_level | plus: variant.inventory_quantity %}
+    {% endfor %}
+
     exponea.track('view_item', {
         product_id: {{ product.id | json }},
         title: {{ product.title | json }},
         price: {{ product.price | money_without_currency | json }},
+        brand: {{ product.vendor | json }},
         _vendor: {{ product.vendor | json }},
         _collection_title: {{ collection.title | json }},
         variant_id: {{ product.selected_or_first_available_variant.id | json }},
         {% if product.tags %}tags: {{ product.tags | json }},{% endif %}
-        _available: {{ product.available|json }}
+        _available: {{ product.available|json }},
+        stock_level: {{ stock_level|json }},
     });
 </script>
 {% endif %}
