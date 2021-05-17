@@ -18,7 +18,7 @@
     var customer = {};
     var cart_id = getCookie('<<CART_COOKIE_NAME>>'); //default Shopify cookie name is "cart"
     if (cart_id) customer.cart_id = cart_id;
-    {% if customer && customer.email %}
+    {% if customer and customer.email %}
     customer.email_id = {{ customer.email | json }};
     customer.shopify_id = {{ customer.id|json }};
     {% endif %}
