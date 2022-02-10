@@ -24,7 +24,8 @@
             shipping_cost: {{ checkout.shipping_method.price | money_without_currency | json }},
             shipping_country: {{ checkout.shipping_address.country | json }},
             shipping_type: {{ checkout.shipping_method.title | json }},
-            total_price: {{ checkout.total_price | money_without_currency | json }}
+            total_price: {{ checkout.total_price | money_without_currency | json }},
+            currency: {{ checkout.currency | json }},
         });
     }
 </script>
