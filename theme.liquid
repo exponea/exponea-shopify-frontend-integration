@@ -8,16 +8,20 @@
     function getCookie(cname) {
         var name = cname + "=";
         var ca = document.cookie.split(';');
+        var cookie = undefined;
         for (var i = 0; i < ca.length; i++) {
             var c = ca[i];
             while (c.charAt(0) == ' ') {
                 c = c.substring(1);
             }
             if (c.indexOf(name) == 0) {
-                return c.substring(name.length, c.length);
+                cookie = c.substring(name.length, c.length);
+                break;
             }
         }
-        return undefined;
+        cookie = decodeURIComponent(cookie);
+        cookie = cookie.split('?')[0];
+        return cookie;
     }
 
     var customer = {};
